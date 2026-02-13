@@ -69,7 +69,7 @@
     </div>
 
     <div class="footer-scroll">
-        <marquee scrollamount="20">♡ LOVE YOU MY JANEMAN ♡ 🌙💌💫🕊️ BY YOURS FOREVER 💞 ♡ FROM AYESHA TO EHSAN ♡ 🌙💌💫🕊️</marquee>
+        <marquee scrollamount="5">♡ LOVE YOU MY JANEMAN ♡ 🌙💌💫🕊️ BY YOURS FOREVER 💞 ♡ FROM AYESHA TO EHSAN ♡ 🌙💌💫🕊️</marquee>
     </div>
 
     <script>
@@ -84,4 +84,65 @@ You are the beautiful reason behind my smile, the peace in my chaos, and the lov
 تمہارے ساتھ ہر دن خاص لگتا ہے، ہر لمحہ قیمتی محسوس ہوتا ہے، اور ہر سانس میں صرف تمہارا نام شامل ہوتا ہے۔ 🌍💗
 
 With you, every day feels like a fairytale, every moment feels special, and every heartbeat whispers your name 💌💍. 
-I don’t need a special day to
+I don’t need a special day to celebrate you, because you are my everything, my always, and my forever 🥺🌹...
+
+تم میری مسکراہٹ کی وجہ ہو، میری خوشیوں کا سبب ہو اور میرے دل کا سب سے حسین احساس ہو۔ 🥺💗
+
+I promise to love you in your silence, in your storms, and in your sunshine. Today, tomorrow, and all my life — IT’S ALWAYS YOU 🥹🫂🍧.
+
+آج کے دن بس اتنا کہنا ہے کہ میں تم سے بے حد محبت کرتی ہوں، آج بھی، کل bhi 🥺💗 اور ہمیشہ ہمیشہ کے لیے۔"🫠🩷
+
+InshaAllah we'll be together forever ...!! ♥️💋🥹🫂
+
+------------------------------------------
+
+Happy Valentine's Day Meri Jwnnn..!! ❤️🌍🔐🫶
+Tum meri zindagi ka sab se khoobsurat hissa ho. Jab bhi main udaas hoti hoon, tumhari ek smile mera din bana deti hai 🥺❤️ Tum sirf mere Valentine nahi, mere best friend, meri dua aur meri khushi ho..!! 🦋🌍🫶
+
+Har din tumhare sath ek nayi kahani jaisa lagta hai – full of love, care aur thori si cute si nok jhok 😚🔐💫 Main bas itna chahti hoon ke hum hamesha aise hi sath rahen, ek dusre ka haath pakar kar har mushkil asaan bana dein..!! 🫶❤️🌍
+
+Thank you meri life mein aane ke liye aur mujhe itna special feel karwane ke liye. I’m so lucky to have you 💍💞
+Forever & always, sirf tumhari ..!! ❤️✨`;
+
+        let i = 0;
+        function typeWriter() {
+            if (i < message.length) {
+                document.getElementById("letterText").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeWriter, 40); // Speed wahi hai jo aapne batayi
+            }
+        }
+
+        function move() {
+            const btn = document.getElementById('noBtn');
+            btn.style.left = Math.random() * 70 + '%';
+            btn.style.top = Math.random() * 70 + '%';
+            btn.style.position = 'fixed';
+        }
+
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('falling-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        function startLetter() {
+            const music = document.getElementById('romanticMusic');
+            music.play().catch(e => console.log("Music play blocked: ", e));
+            
+            document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
+            document.getElementById('actions').style.display = 'none';
+            
+            typeWriter();
+            setInterval(createFallingHeart, 200);
+        }
+    </script>
+</body>
+</html>
+ 
