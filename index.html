@@ -50,7 +50,7 @@
 <body>
 
     <audio id="romanticMusic" loop>
-        <source src="original sound - sk_lyrical_musicaldown.com _1770984687.mp3" type="audio/mpeg">
+        <source src="love.mp3" type="audio/mpeg">
     </audio>
 
     <div class="card">
@@ -101,7 +101,11 @@
 
         function startLetter() {
             const music = document.getElementById('romanticMusic');
-            music.play().catch(e => console.log("Audio Error: ", e));
+            // Play music
+            music.play().catch(e => {
+                console.log("Audio Error: ", e);
+                alert("Please make sure love.mp3 is in the same folder as this file!");
+            });
             
             document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
             document.getElementById('actions').style.display = 'none';
