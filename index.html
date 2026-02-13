@@ -7,16 +7,15 @@
     <style>
         body { 
             margin: 0; padding: 0; font-family: 'Georgia', serif;
-            /* Aapka chuna hua romantic wallpaper yahan hai */
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('http://googleusercontent.com/image_collection/image_retrieval/2975801975000998099_0');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
             height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
         }
         .card {
-            background: rgba(255, 255, 255, 0.93);
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px; border-radius: 30px;
             box-shadow: 0 0 50px rgba(255, 77, 109, 0.6);
             text-align: center; width: 85%; max-width: 500px;
@@ -30,32 +29,28 @@
             text-align: left; white-space: pre-wrap; margin-top: 10px; 
             font-weight: 500;
         }
-        .btn-container { margin-top: 20px; height: 60px; position: relative; }
+        .btn-container { margin-top: 20px; height: 100px; position: relative; width: 100%; }
         button { padding: 12px 28px; font-size: 1.1rem; border-radius: 30px; border: none; cursor: pointer; transition: 0.3s; font-weight: bold; }
-        #yesBtn { background: #ff4d6d; color: white; box-shadow: 0 4px 15px rgba(255,77,109,0.4); }
-        #noBtn { background-color: #ffb3c1; color: white; position: absolute; }
+        #yesBtn { background: #ff4d6d; color: white; box-shadow: 0 4px 15px rgba(255,77,109,0.4); position: relative; z-index: 11; }
+        #noBtn { 
+            background-color: #ffb3c1; color: white; 
+            position: absolute; left: 60%; 
+            transition: all 0.1s ease;
+        }
         
-        /* Falling Hearts Effect */
         .falling-heart {
-            position: fixed;
-            top: -50px;
-            color: #ff0000;
-            font-size: 20px;
-            user-select: none;
-            z-index: 1000;
-            animation: fall linear forwards;
+            position: fixed; top: -50px; color: #ff0000; font-size: 20px;
+            user-select: none; z-index: 1000; animation: fall linear forwards;
         }
-        @keyframes fall {
-            to { transform: translateY(110vh) rotate(360deg); }
-        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
 
         .footer-scroll { position: fixed; bottom: 0; width: 100%; background: rgba(255, 77, 109, 0.85); color: white; padding: 12px 0; font-weight: bold; font-style: italic; }
     </style>
 </head>
 <body>
 
-    <audio id="romanticMusic" loop preload="auto">
-        <source src="https://www.chosic.com/wp-content/uploads/2020/07/The-Closest-Look-Piano-Music.mp3" type="audio/mpeg">
+    <audio id="romanticMusic" loop>
+        <source src="original sound - sk_lyrical_musicaldown.com _1770984687.mp3" type="audio/mpeg">
     </audio>
 
     <div class="card">
@@ -63,7 +58,7 @@
         <div id="letterText"></div>
         <div class="btn-container" id="actions">
             <button id="yesBtn" onclick="startLetter()">YES, I WILL! ❤️</button>
-            <button id="noBtn" onmouseover="move()">NO</button>
+            <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">NO</button>
         </div>
         <div style="margin-top:20px; font-weight:bold; color:#d00000; border-top: 2px solid #ffccd5; padding-top: 10px;">CREATED BY AYESHA</div>
     </div>
@@ -73,51 +68,24 @@
     </div>
 
     <script>
-        const message = `From: AYESHA
-To: EHSAN ❤️
-
-HAPPY VALENTINE’S DAY MY FOREVER LOVE 🌍💗..
-
-You are the beautiful reason behind my smile, the peace in my chaos, and the love that makes my world complete 🥺💗..
-
-تم میری زندگی کی وہ خوبصورت دعا ہو جو مجھے بن مانگے مل گئی۔ 💗💋
-تمہارے ساتھ ہر دن خاص لگتا ہے، ہر لمحہ قیمتی محسوس ہوتا ہے، اور ہر سانس میں صرف تمہارا نام شامل ہوتا ہے۔ 🌍💗
-
-With you, every day feels like a fairytale, every moment feels special, and every heartbeat whispers your name 💌💍. 
-I don’t need a special day to celebrate you, because you are my everything, my always, and my forever 🥺🌹...
-
-تم میری مسکراہٹ کی وجہ ہو، میری خوشیوں کا سبب ہو اور میرے دل کا سب سے حسین احساس ہو۔ 🥺💗
-
-I promise to love you in your silence, in your storms, and in your sunshine. Today, tomorrow, and all my life — IT’S ALWAYS YOU 🥹🫂🍧.
-
-آج کے دن بس اتنا کہنا ہے کہ میں تم سے بے حد محبت کرتی ہوں، آج بھی، کل bhi 🥺💗 اور ہمیشہ ہمیشہ کے لیے۔"🫠🩷
-
-InshaAllah we'll be together forever ...!! ♥️💋🥹🫂
-
-------------------------------------------
-
-Happy Valentine's Day Meri Jwnnn..!! ❤️🌍🔐🫶
-Tum meri zindagi ka sab se khoobsurat hissa ho. Jab bhi main udaas hoti hoon, tumhari ek smile mera din bana deti hai 🥺❤️ Tum sirf mere Valentine nahi, mere best friend, meri dua aur meri khushi ho..!! 🦋🌍🫶
-
-Har din tumhare sath ek nayi kahani jaisa lagta hai – full of love, care aur thori si cute si nok jhok 😚🔐💫 Main bas itna chahti hoon ke hum hamesha aise hi sath rahen, ek dusre ka haath pakar kar har mushkil asaan bana dein..!! 🫶❤️🌍
-
-Thank you meri life mein aane ke liye aur mujhe itna special feel karwane ke liye. I’m so lucky to have you 💍💞
-Forever & always, sirf tumhari ..!! ❤️✨`;
+        const message = `From: AYESHA\nTo: EHSAN ❤️\n\nHAPPY VALENTINE’S DAY MY FOREVER LOVE 🌍💗..\n\nYou are the beautiful reason behind my smile, the peace in my chaos, and the love that makes my world complete 🥺💗..\n\nتم میری زندگی کی وہ خوبصورت دعا ہو جو مجھے بن مانگے مل گئی۔ 💗💋\n\nWith you, every day feels like a fairytale... I don’t need a special day to celebrate you, because you are my everything, my always, and my forever 🥺🌹...\n\nI promise to love you in your silence, in your storms, and in your sunshine. Today, tomorrow, and all my life — IT’S ALWAYS YOU 🥹🫂🍧.\n\nInshaAllah we'll be together forever ...!! ♥️💋🥹🫂\n\nHappy Valentine's Day Meri Jaan..!! ❤️🌍🔐🫶`;
 
         let i = 0;
         function typeWriter() {
             if (i < message.length) {
                 document.getElementById("letterText").innerHTML += message.charAt(i);
                 i++;
-                setTimeout(typeWriter, 40); // Speed wahi hai jo aapne batayi
+                setTimeout(typeWriter, 40);
             }
         }
 
-        function move() {
+        function moveNoButton() {
             const btn = document.getElementById('noBtn');
-            btn.style.left = Math.random() * 70 + '%';
-            btn.style.top = Math.random() * 70 + '%';
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
             btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
         }
 
         function createFallingHeart() {
@@ -127,14 +95,13 @@ Forever & always, sirf tumhari ..!! ❤️✨`;
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
             heart.style.opacity = Math.random();
-            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 5000);
         }
 
         function startLetter() {
             const music = document.getElementById('romanticMusic');
-            music.play().catch(e => console.log("Music play blocked: ", e));
+            music.play().catch(e => console.log("Audio Error: ", e));
             
             document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
             document.getElementById('actions').style.display = 'none';
@@ -145,4 +112,3 @@ Forever & always, sirf tumhari ..!! ❤️✨`;
     </script>
 </body>
 </html>
- 
