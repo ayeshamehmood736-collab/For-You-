@@ -20,7 +20,7 @@
             border: 3px solid #ff4d6d; z-index: 10;
             max-height: 80vh; overflow-y: auto;
         }
-        h1 { color: #d00000; font-size: 1.6rem; margin-bottom: 15px; text-transform: uppercase; }
+        h1 { color: #d00000; font-size: 1.5rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
         #letterText { 
             color: #333; font-size: 1.05rem; line-height: 1.7; 
             text-align: left; white-space: pre-wrap; margin-top: 10px; 
@@ -38,7 +38,7 @@
 <body>
 
     <audio id="romanticMusic" loop preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+        <source src="https://files.catbox.moe/kivm6o.mp3" type="audio/mpeg">
     </audio>
 
     <div class="card">
@@ -52,7 +52,7 @@
     </div>
 
     <div class="footer-scroll">
-        <marquee scrollamount="5">♡ Love you my janeman ♡ 🌙💌💫🕊️ by yours forever 💞 ♡ Love you my janeman ♡ 🌙💌💫🕊️ by yours forever 💞 ♡ Love you my janeman ♡ 🌙💌💫🕊️ by yours forever 💞</marquee>
+        <marquee scrollamount="5">♡ LOVE YOU MY JANEMAN ♡ 🌙💌💫🕊️ BY YOURS FOREVER 💞 ♡ FROM AYESHA TO EHSAN ♡ 🌙💌💫🕊️</marquee>
     </div>
 
     <script>
@@ -69,4 +69,59 @@ You are the beautiful reason behind my smile, the peace in my chaos, and the lov
 With you, every day feels like a fairytale, every moment feels special, and every heartbeat whispers your name 💌💍. 
 I don’t need a special day to celebrate you, because you are my everything, my always, and my forever 🥺🌹...
 
-تم میری مسکراہٹ کی وجہ ہو،
+تم میری مسکراہٹ کی وجہ ہو، میری خوشیوں کا سبب ہو اور میرے دل کا سب سے حسین احساس ہو۔ 🥺💗
+
+I promise to love you in your silence, in your storms, and in your sunshine. Today, tomorrow, and all my life — IT’S ALWAYS YOU 🥹🫂🍧.
+
+آج کے دن بس اتنا کہنا ہے کہ میں تم سے بے حد محبت کرتی ہوں، آج بھی، کل bhi 🥺💗 اور ہمیشہ ہمیشہ کے لیے۔"🫠🩷
+
+InshaAllah we'll be together forever ...!! ♥️💋🥹🫂
+
+------------------------------------------
+
+Happy Valentine's Day Meri Jwnnn..!! ❤️🌍🔐🫶
+Tum meri zindagi ka sab se khoobsurat hissa ho. Jab bhi main udaas hoti hoon, tumhari ek smile mera din bana deti hai 🥺❤️ Tum sirf mere Valentine nahi, mere best friend, meri dua aur meri khushi ho..!! 🦋🌍🫶
+
+Har din tumhare sath ek nayi kahani jaisa lagta hai – full of love, care aur thori si cute si nok jhok 😚🔐💫 Main bas itna chahti hoon ke hum hamesha aise hi sath rahen, ek dusre ka haath pakar kar har mushkil asaan bana dein..!! 🫶❤️🌍
+
+Thank you meri life mein aane ke liye aur mujhe itna special feel karwane ke liye. I’m so lucky to have you 💍💞
+Forever & always, sirf tumhari ..!! ❤️✨`;
+
+        let i = 0;
+        function typeWriter() {
+            if (i < message.length) {
+                document.getElementById("letterText").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeWriter, 40); 
+            }
+        }
+
+        function move() {
+            const btn = document.getElementById('noBtn');
+            btn.style.left = Math.random() * 70 + '%';
+            btn.style.top = Math.random() * 70 + '%';
+            btn.style.position = 'fixed';
+        }
+
+        function startLetter() {
+            const music = document.getElementById('romanticMusic');
+            music.play().catch(e => console.log("Audio failed:", e));
+            
+            document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
+            document.getElementById('actions').style.display = 'none';
+            typeWriter();
+            setInterval(spawnHeart, 150);
+        }
+
+        function spawnHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+    </script>
+</body>
+</html>
