@@ -7,18 +7,22 @@
     <style>
         body { 
             margin: 0; padding: 0; font-family: 'Georgia', serif;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
+            /* Aapka chuna hua romantic wallpaper yahan hai */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('http://googleusercontent.com/image_collection/image_retrieval/2975801975000998099_0');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
             height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
         }
         .card {
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.93);
             padding: 30px; border-radius: 30px;
-            box-shadow: 0 0 50px rgba(255, 77, 109, 0.7);
+            box-shadow: 0 0 50px rgba(255, 77, 109, 0.6);
             text-align: center; width: 85%; max-width: 500px;
             border: 3px solid #ff4d6d; z-index: 10;
             max-height: 80vh; overflow-y: auto;
+            position: relative;
         }
         h1 { color: #d00000; font-size: 1.5rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
         #letterText { 
@@ -30,15 +34,28 @@
         button { padding: 12px 28px; font-size: 1.1rem; border-radius: 30px; border: none; cursor: pointer; transition: 0.3s; font-weight: bold; }
         #yesBtn { background: #ff4d6d; color: white; box-shadow: 0 4px 15px rgba(255,77,109,0.4); }
         #noBtn { background-color: #ffb3c1; color: white; position: absolute; }
+        
+        /* Falling Hearts Effect */
+        .falling-heart {
+            position: fixed;
+            top: -50px;
+            color: #ff0000;
+            font-size: 20px;
+            user-select: none;
+            z-index: 1000;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
         .footer-scroll { position: fixed; bottom: 0; width: 100%; background: rgba(255, 77, 109, 0.85); color: white; padding: 12px 0; font-weight: bold; font-style: italic; }
-        .heart { position: absolute; color: #ff4d6d; animation: floatUp 4s linear infinite; bottom: -50px; }
-        @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-110vh) scale(1.8); opacity: 0; } }
     </style>
 </head>
 <body>
 
     <audio id="romanticMusic" loop preload="auto">
-        <source src="https://files.catbox.moe/kivm6o.mp3" type="audio/mpeg">
+        <source src="https://www.chosic.com/wp-content/uploads/2020/07/The-Closest-Look-Piano-Music.mp3" type="audio/mpeg">
     </audio>
 
     <div class="card">
@@ -52,7 +69,7 @@
     </div>
 
     <div class="footer-scroll">
-        <marquee scrollamount="10">♡ LOVE YOU MY JANEMAN ♡ 🌙💌🕊️ BY YOURS FOREVER 💞 ♡ FROM AYESHA TO EHSAN ♡ 🌙💌💫🕊️</marquee>
+        <marquee scrollamount="20">♡ LOVE YOU MY JANEMAN ♡ 🌙💌💫🕊️ BY YOURS FOREVER 💞 ♡ FROM AYESHA TO EHSAN ♡ 🌙💌💫🕊️</marquee>
     </div>
 
     <script>
@@ -67,62 +84,4 @@ You are the beautiful reason behind my smile, the peace in my chaos, and the lov
 تمہارے ساتھ ہر دن خاص لگتا ہے، ہر لمحہ قیمتی محسوس ہوتا ہے، اور ہر سانس میں صرف تمہارا نام شامل ہوتا ہے۔ 🌍💗
 
 With you, every day feels like a fairytale, every moment feels special, and every heartbeat whispers your name 💌💍. 
-I don’t need a special day to celebrate you, because you are my everything, my always, and my forever 🥺🌹...
-
-تم میری مسکراہٹ کی وجہ ہو، میری خوشیوں کا سبب ہو اور میرے دل کا سب سے حسین احساس ہو۔ 🥺💗
-
-I promise to love you in your silence, in your storms, and in your sunshine. Today, tomorrow, and all my life — IT’S ALWAYS YOU 🥹🫂🍧.
-
-آج کے دن بس اتنا کہنا ہے کہ میں تم سے بے حد محبت کرتی ہوں، آج بھی، کل bhi 🥺💗 اور ہمیشہ ہمیشہ کے لیے۔"🫠🩷
-
-InshaAllah we'll be together forever ...!! ♥️💋🥹🫂
-
-------------------------------------------
-
-Happy Valentine's Day Meri Jwnnn..!! ❤️🌍🔐🫶
-Tum meri zindagi ka sab se khoobsurat hissa ho. Jab bhi main udaas hoti hoon, tumhari ek smile mera din bana deti hai 🥺❤️ Tum sirf mere Valentine nahi, mere best friend, meri dua aur meri khushi ho..!! 🦋🌍🫶
-
-Har din tumhare sath ek nayi kahani jaisa lagta hai – full of love, care aur thori si cute si nok jhok 😚🔐💫 Main bas itna chahti hoon ke hum hamesha aise hi sath rahen, ek dusre ka haath pakar kar har mushkil asaan bana dein..!! 🫶❤️🌍
-
-Thank you meri life mein aane ke liye aur mujhe itna special feel karwane ke liye. I’m so lucky to have you 💍💞
-Forever & always, sirf tumhari ..!! ❤️✨`;
-
-        let i = 0;
-        function typeWriter() {
-            if (i < message.length) {
-                document.getElementById("letterText").innerHTML += message.charAt(i);
-                i++;
-                setTimeout(typeWriter, 40); 
-            }
-        }
-
-        function move() {
-            const btn = document.getElementById('noBtn');
-            btn.style.left = Math.random() * 70 + '%';
-            btn.style.top = Math.random() * 70 + '%';
-            btn.style.position = 'fixed';
-        }
-
-        function startLetter() {
-            const music = document.getElementById('romanticMusic');
-            music.play().catch(e => console.log("Audio failed:", e));
-            
-            document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
-            document.getElementById('actions').style.display = 'none';
-            typeWriter();
-            setInterval(spawnHeart, 150);
-        }
-
-        function spawnHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
-        }
-    </script>
-</body>
-</html>
- 
+I don’t need a special day to
