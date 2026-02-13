@@ -24,46 +24,33 @@
             position: relative;
         }
         h1 { color: #d00000; font-size: 1.6rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
-        
         #letterText { 
             color: #222; font-size: 1.15rem; line-height: 1.8; 
             text-align: center; white-space: pre-wrap; margin-top: 10px; 
             font-weight: 600;
         }
-        
         .btn-container { margin-top: 20px; height: 100px; position: relative; width: 100%; }
         button { padding: 14px 32px; font-size: 1.1rem; border-radius: 30px; border: none; cursor: pointer; transition: 0.3s; font-weight: bold; }
-        
         #yesBtn { background: #ff4d6d; color: white; box-shadow: 0 4px 15px rgba(255,77,109,0.4); z-index: 11; }
         #noBtn { background-color: #ffb3c1; color: white; position: absolute; left: 60%; }
-        
-        .falling-heart {
-            position: fixed; top: -50px; color: #ff0000; font-size: 22px;
-            user-select: none; z-index: 1000; animation: fall linear forwards;
-        }
+        .falling-heart { position: fixed; top: -50px; color: #ff0000; font-size: 22px; user-select: none; z-index: 1000; animation: fall linear forwards; }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
-
         .footer-scroll { position: fixed; bottom: 0; width: 100%; background: rgba(255, 77, 109, 0.9); color: white; padding: 12px 0; font-weight: bold; }
-        
-        .card::-webkit-scrollbar { width: 6px; }
-        .card::-webkit-scrollbar-thumb { background: #ff4d6d; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <audio id="romanticMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
     </audio>
 
     <div class="card">
         <h1 id="mainTitle">Will you be my Valentine? 🌹</h1>
         <div id="letterText"></div>
-        
         <div class="btn-container" id="actions">
             <button id="yesBtn" onclick="startLetter()">YES, I WILL! ❤️</button>
             <button id="noBtn" onmouseover="moveNoButton()">NO</button>
         </div>
-
         <div id="signature" style="margin-top:20px; font-weight:bold; color:#d00000; border-top: 2px solid #ffccd5; padding-top: 15px; display:none; font-size: 1.1rem;">
             CREATED BY AYESHA WITH LOVE ✨
         </div>
@@ -82,7 +69,6 @@
                 document.getElementById("letterText").innerHTML += message.charAt(i);
                 i++;
                 setTimeout(typeWriter, 50);
-                
                 const card = document.querySelector('.card');
                 card.scrollTop = card.scrollHeight;
             }
@@ -92,7 +78,6 @@
             const btn = document.getElementById('noBtn');
             const x = Math.random() * (window.innerWidth - btn.offsetWidth);
             const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.position = 'fixed';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
         }
@@ -109,11 +94,8 @@
 
         function startLetter() {
             const music = document.getElementById('romanticMusic');
-            
-            // Music start karne ki koshish
-            music.play().catch(error => {
-                console.log("Audio auto-play blocked by browser. User interaction required.");
-            });
+            // Play music directly on click
+            music.play();
             
             document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
             document.getElementById('actions').style.display = 'none';
@@ -125,3 +107,4 @@
     </script>
 </body>
 </html>
+
