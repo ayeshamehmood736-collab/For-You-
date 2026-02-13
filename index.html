@@ -1,51 +1,83 @@
-        let i = 0;
-        const message = `From: AYESHA\nTo: EHSAN ❤️\n\nHAPPY VALENTINE’S DAY MY FOREVER LOVE 🌍💗..\n\nYou are the beautiful reason behind my smile, the peace in my chaos, and the love that makes my world complete 🥺💗..\n\nتم میری زندگی کی وہ خوبصورت دعا ہو جو مجھے بن مانگے مل گئی۔ 💗💋\n\nWith you, every day feels like a fairytale... I don’t need a special day to celebrate you, because you are my everything, my always, and my forever 🥺🌹...\n\nI promise to love you in your silence, in your storms, and in your sunshine. Today, tomorrow, and all my life — IT’S ALWAYS YOU 🥹🫂🍧.\n\nInshaAllah we'll be together forever ...!! ♥️💋🥹🫂\n\nHappy Valentine's Day Meri Jaan..!! ♥️🫂\n\nTum meri zindagi ka sab se khoobsurat hissa ho. \n\nJab bhi main udaas hoti hoon, tumhari ek smile mera din bana deti hai 🥺❤️ Tum sirf mere Valentine nahi, mere best friend, meri dua aur meri khushi ho..!! 🦋🌍🫶\n\nHar din tumhare sath ek nayi kahani jaisa lagta hai – full of love, care aur thori si cute si nok jhok 😚🔐💫\n\nMain bas itna chahti hoon ke hum hamesha sath rahen, ek dusre ka haath pakar kar har mushkil asaan bana dein..!! 🫶❤️🌍\n\nThank you meri life mein aane ke liye aur mujhe itna special feel karwane ke liye..😘💋\n\nتمہارے ساتھ ہر دن خاص لگتا ہے، ہر لمحہ قیمتی محسوس ہوتا ہے، اور ہر سانس میں صرف تمہارا نام شامل ہوتا ہے۔ 🌍💗\n\nتم میری مسکراہٹ کی وجہ ہو، میری خوشیوں کا سبب ہو اور میرے دل کا سب سے حسین احساس ہو۔ 🥺💗\n\nآج کے دن بس اتنا کہنا ہے کہ میں تم سے بے حد محبت کرتی ہوں، آج بھی، کل bhi 🥺💗💍 اور ہمیشہ ہمیشہ کے لیے۔\n\nI’m so lucky to have you 💞\nForever & always, sirf tumhari ..!! 😭❤️✨\n\n♡ Love you my janeman by yours forever ♡`;
-
-        function typeWriter() {
-            if (i < message.length) {
-                document.getElementById("letterText").innerHTML += message.charAt(i);
-                i++;
-                // Auto-scroll as it types
-                const card = document.querySelector('.card');
-                card.scrollTop = card.scrollHeight;
-                setTimeout(typeWriter, 40);
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR MY EHSAN ❤️</title>
+    <style>
+        body { 
+            margin: 0; padding: 0; font-family: 'Georgia', serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
         }
-
-        function moveNoButton() {
-            const btn = document.getElementById('noBtn');
-            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.position = 'fixed';
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px; border-radius: 30px;
+            box-shadow: 0 0 50px rgba(255, 77, 109, 0.6);
+            text-align: center; width: 85%; max-width: 500px;
+            border: 3px solid #ff4d6d; z-index: 10;
+            max-height: 80vh; overflow-y: auto;
+            position: relative;
         }
-
-        function createFallingHeart() {
-            const symbols = ['❤️', '✨', '🌸', '💖', '💍'];
-            const heart = document.createElement('div');
-            heart.classList.add('falling-heart');
-            heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            heart.style.opacity = Math.random();
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
+        h1 { color: #d00000; font-size: 1.5rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        #letterText { 
+            color: #333; font-size: 1.1rem; line-height: 1.8; 
+            text-align: center; white-space: pre-wrap; margin-top: 10px; 
+            font-weight: 500;
         }
-
-        function startLetter() {
-            const music = document.getElementById('romanticMusic');
-            const yesBtn = document.getElementById('yesBtn');
-            
-            // Disable button to prevent double typing
-            yesBtn.disabled = true;
-            yesBtn.style.opacity = '0.5';
-            
-            music.play().catch(e => console.log("Audio waiting for interaction..."));
-            
-            document.getElementById('mainTitle').innerHTML = "FOR MY EHSAN ✨❤️";
-            document.getElementById('actions').style.display = 'none';
-            
-            typeWriter();
-            setInterval(createFallingHeart, 250);
+        
+        .btn-container { margin-top: 20px; height: 100px; position: relative; width: 100%; }
+        button { padding: 12px 28px; font-size: 1.1rem; border-radius: 30px; border: none; cursor: pointer; transition: 0.3s; font-weight: bold; }
+        
+        #yesBtn { background: #ff4d6d; color: white; box-shadow: 0 4px 15px rgba(255,77,109,0.4); position: relative; z-index: 11; }
+        #noBtn { 
+            background-color: #ffb3c1; color: white; 
+            position: absolute; left: 60%; 
+            transition: all 0.1s ease;
         }
+        
+        .falling-heart {
+            position: fixed; top: -50px; color: #ff0000; font-size: 20px;
+            user-select: none; z-index: 1000; animation: fall linear forwards;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+        .footer-scroll { position: fixed; bottom: 0; width: 100%; background: rgba(255, 77, 109, 0.85); color: white; padding: 12px 0; font-weight: bold; font-style: italic; }
+        
+        /* Custom Scrollbar */
+        .card::-webkit-scrollbar { width: 5px; }
+        .card::-webkit-scrollbar-thumb { background: #ff4d6d; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <audio id="romanticMusic" loop>
+        <source src="love.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="card">
+        <h1 id="mainTitle">Will you be my Valentine? 🌹</h1>
+        <div id="letterText"></div>
+        
+        <div class="btn-container" id="actions">
+            <button id="yesBtn" onclick="startLetter()">YES, I WILL! ❤️</button>
+            <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">NO</button>
+        </div>
+
+        <div id="signature" style="margin-top:20px; font-weight:bold; color:#d00000; border-top: 2px solid #ffccd5; padding-top: 10px; display:none;">
+            CREATED BY AYESHA WITH LOVE ✨
+        </div>
+    </div>
+
+    <div class="footer-scroll">
+        <marquee scrollamount="5">♡ LOVE YOU MY JANEMAN ♡ 🌙💌💫🕊️ BY YOURS FOREVER 💞 ♡ FROM AYESHA TO EHSAN ♡ 🌙💌💫🕊️</marquee>
+    </div>
+
+    <script>
+        // Integrated both old and new text here
+        const message = `From: AYESHA\nTo: EHSAN ❤️\n\nHAPPY VALENTINE’S DAY MY
